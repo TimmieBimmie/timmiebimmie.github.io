@@ -1,0 +1,120 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;200;300;400;500;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto Mono", monospace;
+  overflow-y: hidden;
+  user-select: none;
+}
+
+.main {
+  min-height: 100vh;
+  position: relative;
+  width: 100%;
+  background: whitesmoke;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.main .image-container {
+  padding: 10px;
+}
+
+.main .image-container .image {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main .image-container .image img {
+  width: 170px;
+  align-items: center;
+}
+
+.main .image-container h1 {
+  color: #8300d4;
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 40px;
+}
+
+.main .image-container p {
+  color: #3a4344;
+  text-align: center;
+  margin-bottom: 40px;
+  
+}
+
+.main .input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 250px;
+  height: 80px;
+  border-radius: 25px;
+  background: transparent;
+  border: 2px solid #3a4344;
+}
+
+
+.main .input:hover {
+  background-color: #3a4344;
+}
+
+
+
+.main .input .talk {
+  background: transparent;
+  flex-direction: column;
+  padding: 10px;
+  margin: 0;
+  outline: none;
+  border: none;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.main .input .talk i {
+  font-size: 20px;
+  color: rgb(0, 0, 0);
+}
+
+.main .input .talk .content {
+  color: #000000;
+  font-size: 15px;
+  margin-top: 10px;
+  
+}
+
+.footer{
+  bottom: 0;
+  position: relative;
+  text-align: center;
+}
+
+.footer p {
+  bottom: 0;
+  text-align: center;
+  color: white;
+}
+
+
+@media screen and (max-width: 700px){
+    .main .input {
+width: 150px;
+height: 75px;
+
+    }
+
+}
