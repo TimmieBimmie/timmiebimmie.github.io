@@ -33,10 +33,11 @@ function speak(sentence) {
 
 
 
+const person = prompt("Wie ist dein Name?");
 
-
-const person = prompt("Wie ist dein Name");
-
+if (person == null){
+    person = "";
+}
 
 
 function wishMe() {
@@ -63,10 +64,11 @@ function wishMe() {
 
 
 window.addEventListener("load", function(){
-    if (person != null){
     wishMe();
-}
 })
+
+
+
 
 
 
@@ -76,13 +78,13 @@ const recognition = new SpeechRecognition();
 recognition.onresult = (event) => {
     const current = event.resultIndex;
     const transcript = event.results[current][0].transcript;
-    content.textContent = transcript;
+    //content.textContent = transcript;
     speakThis(transcript.toLowerCase());
 }
 
 btn.addEventListener('click', ()=>{
     recognition.start();
-})
+});
 
 
 
@@ -90,7 +92,9 @@ btn.addEventListener('click', ()=>{
 
 function speakThis(message) {    
 
+    
      let response = "Ich konnte dich leider nicht verstehen, bitte versuch es noch einmal";
+
 
     if(message.includes('hey') || message.includes('hallo') || message.includes('jessica')) {
         const finalText = "Hallo, wie kann ich helfen?";
@@ -144,19 +148,57 @@ function speakThis(message) {
         response = finalText;
     }
 
-    else if(message.includes('rechnen') ||message.includes('taschenrechner') || message.includes('rechnung')) {
+    else if(message.includes('rechnen') ||message.includes('taschenrechner') || message.includes('rechnung') || message.includes('plus') || message.includes('minus') || message.includes('plus')) {
         window.open('Calculator:///')
         const finalText = "Der Taschenrechner wird geöffnet";
         response = finalText;
     }
 
+    else if (message.includes('danke') || message == "danke"){
+        const finalText = "Gern Geschehen :)";
+        response = finalText;
+    }
+
+
+    else if (message.includes('mein name') || message.includes('wie heisse ich')){
+        const finalText = "Dein Name ist " + person;
+        response = finalText;
+    }
+
+    else if (message.includes('kalender') || message.includes('errinerung')){
+        const finalText = "Kalender wird geöffnet";
+        window.open(`https://calendar.google.com/calendar/u/0/r?pli=1`, "_blank");
+        response = finalText;
+    }
+
     else {
-        window.open(`https://www.google.com/search?q=${message.replace(" ", "+")}`, "_blank");
         const finalText = "Ich habe folgendes zu " + message + " auf google gefunden";
+        window.open(`https://www.google.com/search?q=${message.replace(" ", "+")}`, "_blank");
         response = finalText;
     }
 
     
 
-    window.speechSynthesis.speak(response);
+    speak(response);
+
+
+    console.log("input " + person + " :" + message);
+    console.log("output Jessica: " + response);
+
 }
+
+
+//Style
+
+
+document.getElementById('button').addEventListener('mouseover', function() {
+document.getElementById('button').style.backgroundColor = '#ffffff';
+document.getElementById('i1').style.color = 'rgb(0,0,0)';
+document.getElementById('h11').style.color = 'rgb(0,0,0)';
+});
+
+document.getElementById('button').addEventListener('mouseout', function() {
+    document.getElementById('button').style.backgroundColor = '';
+    document.getElementById('i1').style.color = 'white';
+    document.getElementById('h11').style.color = 'white';
+    });
