@@ -143,7 +143,7 @@ function speakThis(message) {
     }
 
     else if(message.includes('datum') || message == ('was ist das heutige datum')) {
-        const date = new Date().toLocaleString(undefined, {day: "numeric", month: "short"})
+        const date = new Date().toLocaleString(undefined, {day: "numeric", month: "long"})
         const finalText = "Wir haben den " + date;
         response = finalText;
     }
