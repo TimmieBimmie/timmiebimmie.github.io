@@ -27,32 +27,13 @@ function speak(sentence) {
     if (window.speechSynthesis.getVoices().length === 0) {
         window.speechSynthesis.onvoiceschanged = onVoicesChanged;
     } else {
-        onVoicesChanged(); // Direkt aufrufen, wenn Stimmen schon geladen sind
+        onVoicesChanged(); 
     }
 }
 
 
 
 
-
-
-/*function speak(sentence) {
-    window.speechSynthesis.onvoiceschanged = () => {
-        let voiceArr = window.speechSynthesis.getVoices();
-        selectedVoice = voiceArr[2];
-    
-        var text_speak = new SpeechSynthesisUtterance(sentence);
-       
-
-        text_speak = voiceArr[2];
-
-        text_speak.rate = 1;
-        text_speak.pitch = 1;
-
-        
-    }
-    window.speechSynthesis.speak(text_speak);
-}*/
 
 const person = prompt("Wie ist dein Name");
 
@@ -63,19 +44,19 @@ function wishMe() {
     var hr = day.getHours();
 
     if(hr >= 0 && hr < 12) {
-        speak("Guten Morgen " + person + " .Ich bin Jessica dein virtueller Assistent");
+        speak("Guten Morgen " + person + " .Ich bin Jessica dein virtueller Assistent. Wie kann ich behilflich sein?");
     }
 
     else if(hr >12 && hr < 13) {
-        speak("Guten Mittag " + person + " .Ich bin Jessica dein virtueller Assistent");
+        speak("Guten Mittag " + person + " .Ich bin Jessica dein virtueller Assistent. Wie kann ich behilflich sein?");
     }
 
-    else if(hr > 13 && hr <= 17) {
-        speak("Guten Nachmittag " + person + " .Ich bin Jessica dein virtueller Assistent");
+    else if(hr > 13 && hr < 17) {
+        speak("Guten Nachmittag " + person + " .Ich bin Jessica dein virtueller Assistent. Wie kann ich behilflich sein?");
     }
 
     else {
-        speak("Guten Abend " + person + " .Ich bin Jessica dein virtueller Assistent");
+        speak("Guten Abend " + person + " .Ich bin Jessica dein virtueller Assistent. Wie kann ich behilflich sein?");
     }
 }
 
@@ -109,7 +90,7 @@ btn.addEventListener('click', ()=>{
 
 function speakThis(message) {    
 
-    var response = "Ich konnte dich leider nicht verstehen, bitte versuch es noch einmal";
+     let response = "Ich konnte dich leider nicht verstehen, bitte versuch es noch einmal";
 
     if(message.includes('hey') || message.includes('hallo') || message.includes('jessica')) {
         const finalText = "Hallo, wie kann ich helfen?";
@@ -121,24 +102,25 @@ function speakThis(message) {
         response = finalText;
     }
 
-    else if (message.includes('Wie heisst du') || message == ('Wie heisst du')){
-
+    else if (message.includes('wie heisst du') || message == ('Wie heisst du')){
+        const finalText = "Ich heisse Jessica";
+        response = finalText;
     }
    
 
-    else if(message.includes('öffne Google')) {
+    else if(message.includes('öffne google')) {
         window.open("https://google.com", "_blank");
         const finalText = "Google wird geöffnet";
         response = finalText;
     }
 
-    else if(message.includes('öffne Instagram')) {
+    else if(message.includes('öffne instagram')) {
         window.open("https://instagram.com", "_blank");
         const finalText = "Instagram wird geöffnet";
         response = finalText;
     }
 
-    else if(message.includes('Was ist') || message.includes('Wer ist') || message.includes('Was sind') || message.includes('Wo ist')) {
+    else if(message.includes('was ist') || message.includes('wer ist') || message.includes('was sind') || message.includes('wo ist')) {
         window.open(`https://www.google.com/search?q=${message.replace(" ", "+")}`, "_blank");
         const finalText = "Ich habe folgendes zu " + message + "gefunden:";
         response = finalText;
@@ -150,19 +132,19 @@ function speakThis(message) {
         response = finalText;
     }
 
-    else if(message.includes("Zeit") || message == ("Was ist die Zeit")) {
+    else if(message.includes("zeit") || message == ("was ist die Zeit")) {
         const time = new Date().toLocaleString(undefined, {hour: "numeric", minute: "numeric"})
         const finalText = "Es ist" + time;
         response = finalText;
     }
 
-    else if(message.includes('Datum') || message == ('Was ist das heutige Datum')) {
+    else if(message.includes('datum') || message == ('was ist das heutige datum')) {
         const date = new Date().toLocaleString(undefined, {day: "numeric", month: "short"})
         const finalText = "Wir haben den " + date;
         response = finalText;
     }
 
-    else if(message.includes('Rechnen') ||message.includes('Taschenrechner') || message.includes('Rechnung')) {
+    else if(message.includes('rechnen') ||message.includes('taschenrechner') || message.includes('rechnung')) {
         window.open('Calculator:///')
         const finalText = "Der Taschenrechner wird geöffnet";
         response = finalText;
@@ -174,9 +156,7 @@ function speakThis(message) {
         response = finalText;
     }
 
-    speech.volume = 2;
-    speech.pitch = 1;
-    speech.rate = 2;
+    
 
     window.speechSynthesis.speak(response);
 }
