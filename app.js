@@ -167,7 +167,7 @@ function speakThis(message) {
 
     else if (message.includes('kalender') || message.includes('errinerung')){
         const finalText = "Kalender wird geöffnet";
-        window.open(`https://calendar.google.com/calendar/u/0/r?pli=1`, "_blank");
+        window.open(`https://calendar.google.com/calendar`, "_blank");
         response = finalText;
     }
 
