@@ -4,11 +4,7 @@ let speech = new SpeechSynthesisUtterance();
 const btn = document.querySelector('.talk');
 const content = document.querySelector('.content');
 
-
-
 let selectedVoice;
-
-
 
 function speak(sentence) {
     const onVoicesChanged = () => {
@@ -18,8 +14,8 @@ function speak(sentence) {
 
         const utterance = new SpeechSynthesisUtterance(sentence);
         utterance.voice = selectedVoice;
-        utterance.rate = 1;
-        utterance.pitch = 1;
+        utterance.rate = 1.1;
+        utterance.pitch = 1.05;
 
         window.speechSynthesis.speak(utterance);
     };
@@ -32,44 +28,48 @@ function speak(sentence) {
 }
 
 
-
-const person = prompt("Wie ist dein Name?");
-
+let person = prompt("Wie ist dein Name?");
 if (person == null){
     person = "";
 }
+
+setTimeout(callWish, 2000);
+
+function callWish(){
+wishMe();
+}
+
 
 
 function wishMe() {
     var day = new Date();
     var hr = day.getHours();
+    let greet = "Hallo, es gab ein Problem, bitte lade die Seite neu."
 
     if(hr >= 0 && hr < 12) {
-        speak("Guten Morgen " + person + " .Ich bin Jessica dein virtueller Assistent. Wie kann ich behilflich sein?");
+        greet = ("Guten Morgen " + person + " .Ich bin Jessica dein virtueller Assistent. Wie kann ich behilflich sein?");
     }
 
     else if(hr >12 && hr < 13) {
-        speak("Guten Mittag " + person + " .Ich bin Jessica dein virtueller Assistent. Wie kann ich behilflich sein?");
+        greet = ("Guten Mittag " + person + " .Ich bin Jessica dein virtueller Assistent. Wie kann ich behilflich sein?");
     }
 
     else if(hr > 13 && hr < 17) {
-        speak("Guten Nachmittag " + person + " .Ich bin Jessica dein virtueller Assistent. Wie kann ich behilflich sein?");
+        greet = ("Guten Nachmittag " + person + " .Ich bin Jessica dein virtueller Assistent. Wie kann ich behilflich sein?");
     }
 
     else {
-        speak("Guten Abend " + person + " .Ich bin Jessica dein virtueller Assistent. Wie kann ich behilflich sein?");
+        greet = ("Guten Abend " + person + " .Ich bin Jessica dein virtueller Assistent. Wie kann ich behilflich sein?");
     }
+
+    speak(greet);
+
 }
 
 
-
-window.addEventListener("load", function(){
+/*function start(){window.addEventListener("load", function(){
     wishMe();
-})
-
-
-
-
+})}*/
 
 
 const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
@@ -85,8 +85,6 @@ recognition.onresult = (event) => {
 btn.addEventListener('click', ()=>{
     recognition.start();
 });
-
-
 
 
 
@@ -167,15 +165,41 @@ function speakThis(message) {
 
     else if (message.includes('kalender') || message.includes('errinerung')){
         const finalText = "Kalender wird geöffnet";
-        window.open(`https://calendar.google.com/calendar`, "_blank");
+        window.open(`https://calendar.google.com/calendar/u/0/r?pli=1`, "_blank");
         response = finalText;
     }
+
+    else if(message.includes('halt dein maul') || message.includes('fresse')) {
+        const finalText = "Komm 1 gegen 1 du huso";
+        response = finalText;
+    }
+
+    else if(message.includes('youtube') || message == ('öffne youtube')) {
+        window.open(`https://www.youtube.com`, "_blank");
+        const finalText = "youtube wird geöffnet";
+        response = finalText;
+    }
+
+    else if(message.includes('whatsapp') || message == ('öffne whatsapp')) {
+        window.open(`https://www.web.whatsapp.com`, "_blank");
+        const finalText = "whatsapp wird geöffnet";
+        response = finalText;
+    }
+
+    else if(message.includes('messi oder ronaldo') || message == ('messi oder ronaldo')) {
+        const finalText = "messi ganz klar";
+        response = finalText;
+    }
+
 
     else {
         const finalText = "Ich habe folgendes zu " + message + " auf google gefunden";
         window.open(`https://www.google.com/search?q=${message.replace(" ", "+")}`, "_blank");
         response = finalText;
     }
+
+
+    
 
     
 
