@@ -33,7 +33,7 @@ if (person == null){
     person = "";
 }
 
-setTimeout(callWish, 2000);
+setTimeout(callWish, 1000);
 
 function callWish(){
 wishMe();
@@ -134,7 +134,7 @@ function speakThis(message) {
         response = finalText;
     }
 
-    else if(message.includes("zeit") || message == ("was ist die Zeit")) {
+    else if(message.includes("zeit") || message == ("was ist die Zeit") || message == ("wie spät ist es")) {
         const time = new Date().toLocaleString(undefined, {hour: "numeric", minute: "numeric"})
         const finalText = "Es ist" + time;
         response = finalText;
@@ -165,7 +165,7 @@ function speakThis(message) {
 
     else if (message.includes('kalender') || message.includes('errinerung')){
         const finalText = "Kalender wird geöffnet";
-        window.open(`https://calendar.google.com/calendar/u/0/r?pli=1`, "_blank");
+        window.open(`https://calendar.google.com/calendar/`, "_blank");
         response = finalText;
     }
 
@@ -191,6 +191,12 @@ function speakThis(message) {
         response = finalText;
     }
 
+    else if(message.includes('suche nach')) {
+        message = message.replace('suche nach', '');
+        window.open(`https://www.google.com/search?q=${message.replace(" ", "+")}`, "_blank");
+        response = finalText;
+    }
+
 
     else {
         const finalText = "Ich habe folgendes zu " + message + " auf google gefunden";
@@ -206,7 +212,7 @@ function speakThis(message) {
     speak(response);
 
 
-    console.log("input " + person + " :" + message);
+    console.log("input " + person + ": " + message);
     console.log("output Jessica: " + response);
 
 }
