@@ -194,6 +194,7 @@ function speakThis(message) {
     else if(message.includes('suche nach')) {
         message = message.replace('suche nach', '');
         window.open(`https://www.google.com/search?q=${message.replace(" ", "+")}`, "_blank");
+        const finalText = "Ich konnte folgendes zu" + message + " finden";
         response = finalText;
     }
 
