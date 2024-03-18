@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jessica</title>
+
+    <link rel="stylesheet" href="chat.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+</head>
+
+<body>
+    
+    <section class="main">
+    <h1>J E S S I C A</h1>
+    
+        <span class="navspan" onclick="openMenu()">&#9776;</span>
+    <div id="nav" class="nav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeMenu()">&times;</a>
+      <a href="index.html">Home</a>
+      <a href="chat.html" class="active">Standort</a>
+    </div>  
+    
+
+    <div class="ndiv" id="ndiv">
+        <p style="color: white; text-align: center; font-family: roboto; margin-bottom: 15px; margin-top: 10px; font-size: 15px; background-color: transparent;">Schreibe etwas um den Chat zu starten</p>
+    </div>
+    
+        <div class="input" type="text" id="inputDiv">
+            <input placeholder="Was möchtest du Wissen?" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Was möchtest du wissen?'">
+            <button class="send" id="button"><i class="fas fa-paper-plane"></i>
+            </button>
+        </div>
+
+        
+    </section>
+<div class="cursor"></div>
+
+    <script src="app2.js"></script>
+</body>
+
+</html>

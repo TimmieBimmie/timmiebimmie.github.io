@@ -1,0 +1,364 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;200;300;400;500;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+
+@font-face {
+  font-family: lexend;
+  src: url(Font/Lexend-SemiBold.ttf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto Mono", monospace;
+  overflow-y: hidden;
+  user-select: none;
+}
+
+*:hover {
+  cursor: url("cusor.png"), auto;
+}
+
+body{
+  background-color: rgb(0,0,0);
+  cursor: url("cusor.png"), auto;
+}
+
+.main {
+  cursor: url("cusor.png"), auto;
+  height: 100vh;
+  position: fixed;
+  width: 100%;
+  background: rgb(0, 0, 0);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+
+.header{
+  background-color: rgb(0,0,0);
+  width: 100%;
+  text-align: center;
+  top: 0;
+  position: absolute;
+  justify-content: center;
+  display: flex;
+}
+
+.header a {
+  text-decoration: none;
+  color: white;
+  font-family: lexend;
+  font-size: 1.5em;
+  margin: 10px;
+  text-align: center;
+}
+
+a .active{
+  text-decoration: none;
+  color:  #8300d4;
+  font-family: lexend;
+  font-size: 1.5em;
+  margin: 10px;
+  text-align: center;
+}
+
+.main .image-container {
+  padding: 10px;
+  text-align: center;
+}
+
+.main .image-container .image {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main .image-container .image img {
+  width: 170px;
+  align-items: center;
+}
+
+.main .image-container h1 {
+  color: #8300d4;
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 40px;
+}
+
+.main .image-container p {
+  color: #3a4344;
+  text-align: center;
+  margin-bottom: 40px;
+  
+}
+
+.main .input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 250px;
+  height: 80px;
+  border-radius: 25px;
+  background: transparent;
+  border: 2px solid #ffffff;
+}
+
+
+.main .input:hover{
+  background-color: #ffffff;
+  color: black;
+  cursor: none;
+}
+
+
+.main .input .talk {
+  background: transparent;
+  flex-direction: column;
+  padding: 10px;
+  margin: 0;
+  outline: none;
+  border: none;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+  text-align: center;
+}
+
+.main .input .talk i {
+  font-size: 20px;
+  color: rgb(255, 255, 255);
+}
+
+.main .input .talk .content {
+  color: #ffffff;
+  font-size: 15px;
+  margin-top: 10px;
+  
+}
+
+.footer{
+  bottom: 0;
+  position: relative;
+  text-align: center;
+}
+
+.footer p {
+  bottom: 0;
+  text-align: center;
+  color: white;
+}
+
+
+
+.type {
+  text-align: center;
+  color:#ffffff00;
+  font-weight: 750;
+  background:
+    linear-gradient(-90deg,#ffffff 5px,#ffffff00 0) 10px 0,
+    linear-gradient(#ffffff 0 0) 0 0;
+  background-size:calc(var(--n)*1ch) 200%;
+  -webkit-background-clip:padding-box,text;
+  background-clip:padding-box,text;
+  background-repeat:no-repeat;
+  animation: 
+   b .7s infinite steps(1),   
+   t calc(var(--n)*.3s) steps(var(--n)) forwards;
+}
+
+@keyframes t{
+  from {background-size:0 200%}
+}
+@keyframes b{
+  50% {background-position:0 -100%,0 0}
+}
+
+
+/*
+.in{
+  margin-top: 80px;
+  font-family: "Lexend", sans-serif;
+  text-align: center;
+}
+
+#input {
+  font-family: "Lexend", sans-serif;
+  margin-top: 10px;
+  color: white;
+  text-align: center;
+  font-size: large;
+}
+
+.out{
+  margin-top: 40px;
+  font-family: "Lexend", sans-serif;
+  text-align: center;
+}
+
+#output {
+  font-family: "Lexend", sans-serif;
+  margin-top: 10px;
+  color: white;
+  text-align: center;
+  font-size: large;
+}
+
+*/
+
+
+.cursor {
+  position: fixed;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid #eee;
+  left: 0;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  transition: width 1000ms, height 1000ms;
+}
+
+.cursor.large {
+  height: 70px;
+  width: 70px;
+}
+
+
+
+
+@media screen and (max-width: 700px){
+    .main .input {
+width: 150px;
+height: 75px;
+
+    }
+
+}
+
+
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.nav {
+  height: 100%;
+  display: block;
+  margin: auto;
+  width: 0;
+  position: absolute;
+  z-index: 1;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  background-color: #4a4a4a;
+  opacity: 0.9;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+  text-align: center;
+  font-family: ABB;
+}
+
+.nav a {
+  padding: 10px 10%;
+  font-family: lexend;
+  text-decoration: none;
+  font-size: 25px;
+  color: #a3a3a3;
+  display: flex;
+  margin: auto;
+  justify-content: center;
+  transition: 0.3s;
+  text-align: center;
+
+}
+
+.nav a:hover{
+  color: rgb(191, 103, 103);
+}
+
+.nav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 45px;
+  margin-left: 50px;
+}
+
+.nav .active{
+  color: rgb(255, 255, 255);
+}
+
+.nav:active{
+  color:  rgb(191, 103, 103);
+}
+
+.navspan {
+  display: block;
+  position: absolute;
+  color: white;
+  top: 3px;
+  left: 15px;
+  font-size: 2.5rem;
+}
+
+
+
+
+@media screen and (max-width: 999px){
+  *{
+    cursor: auto;
+  }
+  main{
+    cursor: auto;
+  }
+  body{
+    cursor: auto;
+  }
+  *:hover{
+    cursor: pointer;
+  }
+  .cursor{
+    display: none;
+  }
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jessica</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+</head>
+
+<body>
+    
+    <section class="main">
+        <span class="navspan" onclick="openMenu()">&#9776;</span>
+        <div id="nav" class="nav">
+          <a href="javascript:void(0)" class="closebtn" onclick="closeMenu()">&times;</a>
+          <a href=".index.html" class="active">Voice Assistant</a>
+          <a href="chat.html">Chat Assistant</a>
+        </div>  
+
+
+        <div class="image-container">
+            <div class="image">
+            <!--<img src="" alt="image">-->
+            </div>
+            <h1>J E S S I C A</h1>
+            <span class="type" style="--n:53">Hallo, ich bin Jessica.<br class="break"> Wie kann ich dir helfen?</span>
+            <p></p>
+        </div>
+        <div class="input" id="inputDiv">
+            <button class="talk" id="button"><i id="i1" class="fas fa-microphone-alt"></i>
+                <h1 id="h11" class="content">Sprechen</h1>
+            </button>
+        </div>
+<!--
+        <div class="in">
+            <h1 style="color: white;">INPUT:</h1>
+            <p id="input">Test</p>
+        </div>
+
+        <div class="out">
+            <h1 style="color: white;">OUTPUT:</h1>
+            <p id="output"></p>
+        </div>
+-->
+        
+
+        
+    </section>
+    <div class="cursor"></div>
+    
+    <script src="app.js"></script>
+</body>
+
+</html>
