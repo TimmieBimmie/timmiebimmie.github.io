@@ -289,21 +289,10 @@ document.getElementById('button').addEventListener('mouseout', function() {
    
 function openMenu() {
     const nav = document.querySelector(".nav");
-
-    if (screen.width <= 999){
-        nav.style.width = "55%";
-    }
-    else if (screen.width <= 775 ){
-        nav.style.width = "70%";
-    }
-   else if (screen.width <= 650 ){
-        nav.style.width = "100%";
-    }
-    
-      else {nav.style.width = "100%";
+    nav.style.width = "100%";
   }
     
-  }
+  
   
     function closeMenu() {
       document.getElementById("nav").style.width = "0";
