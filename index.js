@@ -6,7 +6,7 @@ document.addEventListener('contextmenu', event => {
 
 const links = ['img/isaiah_53-3.jpg', 'img/Matthew_28_6.jpg', 'img/Romans_6_23.jpg', 'img/Romans_8_39.jpg', 'img/Psalm_56_4.jpg',
 'img/Romans_8_35.jpg', 'img/Romans_8_28.jpg', 'img/Isaiah_53_5.jpg', 'img/Romans_15_13.jpg', 'img/Joshua_1_9.jpg', 'img/John_11_25-26.jpg',
-'img/Deutoronomy_31_8.jpg', 'img/Colossians_1_28.jpg', 'img/Ecclesiastes.jpg'];
+'img/Deuteronomy_31_8.jpg', 'img/Colossians_1_28.jpg', 'img/Ecclesiastes.jpg'];
 
 const container = document.getElementById("container");
 
