@@ -37,7 +37,7 @@ function scheduleDailyRun() {
       localStorage.setItem('lastRun', now);
       localStorage.setItem('Number', randImg2);
       localStorage.setItem('i', 0);
-      localStorage.setItem('Array', '');
+      localStorage.setItem('Array', '[]');
     }
 
     const nextRun = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1);
@@ -66,12 +66,6 @@ var i = localStorage.getItem('i');
 container.appendChild(img);
 var usedArr;
 
-if (usedArr.length() == links.length()){
-localStorage.clear();
-window.location.reload();
-}
-
-
 
 function newVerse() {
     usedArr = JSON.parse(localStorage.getItem('Array') || "[]");
@@ -90,6 +84,11 @@ function newVerse() {
     container.appendChild(img);
     usedArr.push(randImg);
     localStorage.setItem('Array', JSON.stringify(usedArr));
+
+    if (usedArr.length === links.length) {
+      localStorage.clear();
+      usedArr = [];
+    }
 }
 
 
