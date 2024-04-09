@@ -91,4 +91,12 @@ function newVerse() {
     }
 }
 
+var github = document.getElementById("github-pad");
+var githubi = document.getElementById("github");
+
+github.addEventListener("click", function(){
+  window.open("https://www.github.com/TimmieBimmie");
+})
+
+
 
