@@ -34,6 +34,7 @@
         font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
         font-weight: lighter;
         font-size: calc(3vw + 12px);
+        text-align: center;
     }
 
     .container{
@@ -98,6 +99,45 @@
         align-self: center;
     }
 
+
+    #github{
+        width: 100%;
+        color: white;
+        box-shadow: none;
+        display: flex;
+        align-items: center;
+        font-size: calc(3vw + 7px);
+    }
+
+    #github:hover{
+        color: rgb(208, 126, 126);
+        transform: perspective(2px) translateZ(0);
+        transition-duration: 0.7s;
+        transition: 0.7s;
+    }
+
+
+
+    .github-pad{
+        background: transparent;
+        cursor: pointer;
+        box-shadow: none;
+        border: none;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        height: calc(20vh - 15px); 
+        position: absolute;
+        right: 15px;
+        margin-top: 2px;        
+    }
+
+
+    .small{
+        display: none;
+    }
+
+
     @media screen and (max-width: 500px) {
         .btn{
             width: 75vw;
@@ -107,6 +147,10 @@
         }
         h1{
             font-size: calc(5vw + 12px);
+        }
+
+        #github{
+            font-size: calc(5vw + 7px);
         }
     }
     
@@ -123,4 +167,10 @@
     @media screen and (max-width: 700px) {
        .container{ margin-bottom: 9vh;}
     }
+
+    @media screen and (max-width: 475px) {
+        .small{ display: block;}
+     }
+
+
     
