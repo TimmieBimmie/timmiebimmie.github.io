@@ -31,7 +31,7 @@
 
     h1{
         color: #f1f1f1;
-        font-family: fantasy;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
         font-weight: lighter;
         font-size: calc(3vw + 12px);
     }
@@ -44,7 +44,7 @@
         justify-content: center;
         align-items: center;
         position: absolute;
-        
+        margin-bottom: 7vh;
     }
 
     .download{
@@ -96,7 +96,6 @@
         object-fit: contain;
         justify-content: center;
         align-self: center;
-        margin-bottom: 5vh;
     }
 
     @media screen and (max-width: 500px) {
@@ -122,8 +121,6 @@
 
 
     @media screen and (max-width: 700px) {
-        img{
-            margin-bottom: 8vh;
-        }
+       .container{ margin-bottom: 9vh;}
     }
     
