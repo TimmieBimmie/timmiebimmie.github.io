@@ -70,11 +70,12 @@
         background-color: DodgerBlue;
         border: none;
         color: white;
-        padding: 12px 30px;
+        padding: 12px 55px;
         cursor: pointer;
         font-size: 20px;
         font-family: Arial, Helvetica, sans-serif;
         font-weight: 650;
+        border-radius: 10px;
     }
     
     .btn:hover {
