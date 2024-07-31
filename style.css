@@ -1,23 +1,49 @@
-    @font-face {
-        font-family: Lexend;
-        src: url(Font/Lexend-Bold.ttf);
+   .lexend-font {
+    font-family: "Lexend", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
     }
+
+    *::selection{
+        background-color: #393b47;
+        color: white;
+    }
+
+    .verseWrapper::-webkit-scrollbar{
+        width: 10px;
+    }
+
+    .verseWrapper::-webkit-scrollbar-track {
+        background-color: transparent;
+      }
+
+    .verseWrapper::-webkit-scrollbar-thumb {
+        background-color: #2c4953;
+        border-radius: 20px;
+        border: 6px solid transparent;
+        background-clip: content-box;
+      }
+
+      .verseWrapper::-webkit-scrollbar-thumb:hover {
+        opacity: 0.5;
+      }
 
     html {
         width: 100%;
         height: 100%;
-        user-select: none;
     }
 
     body {
         background-color: #f1f1f1;
-        max-width: 100%;
-        max-height: 100vh;
-        display: block;
+        width: 100%;
+        height: 100dvh;
+        display: flex;
+        flex-direction: column;
         padding: 0;
         margin: 0;
-        overflow: hidden;
-
+        overflow-y: auto;
+        overflow-x: hidden;
     }
 
     .header{
@@ -27,123 +53,361 @@
         height: calc(20vh - 15px);
         background-color: #272A40;
         top: 0;
+        min-height: 100px;
+        max-height: 180px;
     }
 
     h1{
         color: #f1f1f1;
         font-family: Arial, Helvetica, sans-serif;
         font-weight: 750;
-        font-size: calc(3vw + 12px);
+        font-size: 2.75rem;
         text-align: center;
+        display: flex;
+        flex-shrink: 1;
+        overflow-wrap: break-word;
+    }
+
+    mark{
+        background-color: lightblue;  
     }
 
     .container{
-        width: 100vw;
-        height: 60%;
+        width: 100%;
+        height: 50vh;
         margin-top: 0;
         display: flex;
         justify-content: center;
         align-items: center;
+    }
+
+
+    .verseWrapper{
         position: absolute;
-        margin-bottom: 7vh;
+        z-index: -1;
+        background-color: transparent;
+        background-color: white;
+        display: grid;
+        grid-template-rows: 0.2fr 0.6fr 0.2fr;
+        place-items: center;
+        transition: transform ease-in-out 0.75s;
+        cursor: pointer;
+        overflow: auto;
+        width: 0;
+        height: 0;
+    }
+
+    .verseWrapper p{
+        text-align: justify;
+        text-justify: kashida;
+        line-height: 1.4;
+        -webkit-hyphens: auto;
+        hyphens: auto;
+        width: 85%;
+        height: 100%;
+        color: black;
+        font-weight: 550;
+        font-size: 1.1rem;
+        font-family: Lexend, helvetica;
+        padding: 0;
+    }
+
+    .verseWrapper a{
+        font-family: Lexend, helvetica;
+        font-weight: 300;
+        text-decoration: none;
+        color: white;
+        background-color: #303349;
+        padding: 12px 30px;   
+        transition: 0.25s box-shadow ease-in;   
+        border-radius: 4px; 
+        margin-bottom: 15px;
+    }
+
+    .verseWrapper a:hover{
+        box-shadow: 4px 1px 18px 5px rgba(0,0,0,0.4);
+    }
+
+    h2{
+        font-weight: 800;
+        font-family: Lexend, helvetica;
     }
 
     .download{
         width: 100%;
-        height: 15%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: absolute;
-        bottom: 0;
+        height: fit-content;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        place-items: center;
     }
 
     #adwnld{
         display: flex;
         justify-content: center;
-        position: absolute;
-        bottom: 20px;
         text-decoration: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+    }
+
+    .btnWrapper, .likeWrapper{
+        background-color: rgb(7, 115, 187);
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 4px;
+    }
+
+    .likeWrapper{
+        background-color: rgb(148, 46, 46);
+    }
+
+    #like{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        align-items: center;
+        height: 12px;
+        border: none;
+        color: white;
+        cursor: pointer;
+        font-size: 20px;
+        border-radius: 4px;
+        padding: 12px 10px;
+    }
+
+    #like:hover{
+        background-color: rgb(126, 42, 42);
     }
 
     .btn {
-        background-color: DodgerBlue;
+        width: 100%;
+        height: 100%;
+        background-color: transparent;
         border: none;
         color: white;
-        padding: 12px 55px;
         cursor: pointer;
         font-size: 20px;
-        font-family: Arial, Helvetica, sans-serif;
-        font-weight: 650;
-        border-radius: 10px;
+        border-radius: 4px;
     }
     
-    .btn:hover {
-        background-color: RoyalBlue;
+    .btn:hover{
+        background-color: rgb(11, 92, 146);
     }
 
     main{
         width: 100vw;
         display: flex;
-        justify-content: center;
+        flex-direction: column;
+        justify-content: space-evenly;
         align-items: center;
-        height: calc(100vh - 20vh - 15px);
+        height: 100%;
         margin-top: 0;
-
     }
 
-    img{
+    main img{
+        z-index: 0;
         width: 100%;
         height: 100%;
         object-fit: contain;
+        display: flex;
         justify-content: center;
         align-self: center;
+        transition: transform ease-in-out 0.75s;
+        backface-visibility: hidden;
+        cursor: pointer;
     }
 
 
     #github{
         width: 100%;
-        color: white;
+        color: rgb(0, 0, 0);
         box-shadow: none;
-        display: flex;
-        align-items: center;
-        font-size: calc(3vw + 7px);
+        font-size: 1.75rem;
+        padding: 12px;
+        position: relative;
+        right: 18px;
+        top: 5px;
+        cursor: pointer;
     }
-
-    #github:hover{
-        color: rgb(208, 126, 126);
-        transform: perspective(2px) translateZ(0);
-        transition-duration: 0.7s;
-        transition: 0.7s;
-    }
-
 
 
     .github-pad{
-        background: transparent;
-        cursor: pointer;
-        box-shadow: none;
-        border: none;
-        padding: 10px;
-        display: flex;
-        align-items: center;
-        height: calc(20vh - 15px); 
-        position: absolute;
-        right: 15px;
-        margin-top: 2px;        
+        position: fixed;
+            top: -54px;
+            right: -52px;
+            width: 0;
+            height: 0;
+            background-color: transparent;
+            border-left: 50px solid transparent; /* Breite der transparenten Seite */
+            border-bottom: 50px solid#f1f1f1; /* Farbe des Dreiecks */
+            border-right: 50px solid transparent; /* Breite der transparenten Seite */
+            border-top: 50px solid transparent;
+            rotate: 45deg;
+            transition: 0.5s ease-in-out;
     }
 
-
+    
     .small{
         display: none;
     }
 
+    footer {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        height: 10%;
+        background-color: rgb(57, 66, 90);
+        min-height: 42px;
+    }
+
+    footer i{
+        color: rgb(221, 213, 213);
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+
+    .content{
+        max-width: 1200px;
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-rows: 1fr;
+        grid-template-columns: 1fr 1fr;
+        place-items: center;
+    }
+
+
+    .showFav{
+        display: none;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        margin: 0 auto;
+        bottom: 35px;
+        left: 0;
+        right: 0;
+        width: 90%;
+        max-width: 500px;
+        height: fit-content;
+        min-height: 8%;
+        background-color: rgb(36, 34, 34);
+        border-radius: 4px;
+        box-shadow: 4px 8px 38px 5px rgba(0,0,0,0.75);
+    }
+
+    .showFav p{
+        padding-left: 15px;
+        font-size: 0.75rem;
+        display: flex;
+        align-items: center;
+        width: 90%;
+        color: white;
+        font-family: Helvetica, Arial, sans-serif;
+        font-weight: 540;
+    }
+
+    #close{
+        position: absolute;
+        right: 7px;
+        color: white;
+        font-size: 1rem;
+        padding: 5px;
+    }
+
+
+    .favouriteMain{
+        overflow-y: auto;
+        overflow-x: hidden;
+        height: 100%;
+        width: 100%;
+        display: none;
+        grid-template-columns: 1fr;
+    }
+
+    .noFavs{
+        font-size: 1rem;
+        font-family: helvetica, Arial, sans-serif;
+        display: none;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .imgLike{
+        width: 60%;
+        object-fit: contain;
+        max-height: 300px;
+        aspect-ratio: 1/1;
+    }
+
+    .favouriteMain div:not(.optionWrapper){
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .optionWrapper{
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr;
+        place-items: center;
+        width: 40%;
+        height: 90%;
+        max-height: 300px;
+    }
+
+    .dwnWrapper, .likeHeart, .read{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 80%;
+        height: 50%;
+        color: white;
+        max-width: 200px;
+        cursor: pointer;
+        border-radius: 8px;
+    }
+
+    .likeDown{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgb(7, 115, 187);
+        border-radius: 8px;
+    }
+
+    .likeDown:hover{
+        background-color: rgb(11, 92, 146);
+    }  
+
+
+    .likeHeart{
+        background-color: rgb(148, 46, 46);
+    }
+
+    .likeHeart:hover{
+        background-color: rgb(126, 42, 42);
+    }
+
+    .read{
+        background-color: #272A40;
+        text-decoration: none;
+        font-family:  Lexend, Helvetica, Arial, sans-serif;
+    }
+
+    .read:hover{
+        background-color: #1a1d33;
+    }
+
+
 
     @media screen and (max-width: 500px) {
-        .btn{
-            width: 75vw;
-        }
-        img{
+        main img{
             width: 90vw;
         }
         h1{
@@ -156,21 +420,19 @@
     }
     
 
-    
-    @media screen and (max-width: 420px) {
-        .btn{
-            width: 85vw;
-            margin-bottom: 20px;
-        }
-    }
-
-
-    @media screen and (max-width: 700px) {
-       .container{ margin-bottom: 9vh;}
-    }
 
     @media screen and (max-width: 475px) {
         .small{ display: block;}
+     }
+
+    
+     @media screen and (max-width: 700px) {
+        #like:hover{
+            background-color: rgb(148, 46, 46);;
+        }
+        .btn:hover{
+            background-color: rgb(7, 115, 187);
+        }
      }
 
 
