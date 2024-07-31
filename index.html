@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@500&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HOME - DAILY BIBLEVERSE</title>
     <link rel="stylesheet" href="style.css">
-    <meta name="keywords" content="Bibelverse">
+    <meta name="author" content="Tim Marlétaz">
+    <meta name="keywords" content="Bibelverse, daily bibleverse, daily bible verse, bible verse">
     <link rel="icon" type="image/x-icon" href="img/favicon.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/f3f08c04e9.js" crossorigin="anonymous"></script>
 </head>
 <body>
-
 
     <div class="header">
     <h1>Your Daily <br class="small">Bible Verse</h1>
@@ -17,18 +21,47 @@
     </div>
 
     <main>
-    <div class="container" id="container">
-        <img id="img">
+        <div class="container" id="container">
+            <img id="img">
+            <div class="verseWrapper">
+                <h2>Heading</h2>
+                <p></p>
+                <a href="https://www.google.com" target="_blank">Read more</a>
+            </div>
+        </div>
+
+        
+        <div class="download" id="dwnld">
+            <div class="likeWrapper">
+                <i class="fa-regular fa-heart" id="like"></i>
+            </div>
+            <div class="btnWrapper">
+                <a id="adwnld">
+                    <button class="btn"><i class="fa-solid fa-file-arrow-down"></i></button>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <div class="favouriteMain">
+        <h2 class="noFavs">You have no favourites yet</h2>
     </div>
 
-    <div class="download" id="dwnld">
-    <a id="adwnld">
-<button class="btn"><i class="fa fa-download"></i> Download</button>
-    </a>
+
+    <footer>
+        <div class="content">
+            <i class="fa-solid fa-image" id="home"></i>
+            <i class="fa-regular fa-heart" id="likePage"></i>
+        </div>
+    </footer>
+
+    <div class="showFav" id="showFav">
+        <p id="showFavP"></p>
+        <i class="fa-solid fa-x" id="close"></i>
     </div>
-</main>
 
 
 </body>
-</html>
 <script src="index.js"></script>
+</html>
+
